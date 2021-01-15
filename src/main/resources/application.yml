@@ -1,0 +1,42 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: admin-proxy
+  profiles:
+    active:
+    - dev
+---
+spring:
+  batch:
+    job:
+      enabled: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/postgres
+    username: postgres
+    password: 123
+
+    dbcp2:
+      test-on-borrow: true
+      test-while-idle: true
+      validation-query: SELECT 1
+    initialization-mode: always
+    
+  data:
+    rest:
+      detection-strategy: annotated
+      
+management:
+  server:
+    port: 8088
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: always     
+  endpoints:
+    web:
+      exposure:
+        include: "*"

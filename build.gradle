@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.0-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.tgdd.fresher.webAPI'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.hibernate:hibernate-core:5.4.25.Final'
+	implementation 'org.springframework.boot:spring-boot-starter-web-services'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.postgresql:postgresql:42.2.18'
+	implementation 'org.apache.commons:commons-dbcp2'
+	implementation 'org.springframework.data:spring-data-jpa:2.4.2'
+	implementation 'io.swagger:swagger-annotations:1.6.2'
+	implementation 'io.springfox:springfox-swagger2:2.9.2'
+	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+	implementation 'io.springfox:springfox-boot-starter:2.9.2'
+	implementation 'org.modelmapper:modelmapper:2.3.9'
+	implementation 'com.microsoft.sqlserver:mssql-jdbc:9.1.1.jre15-preview'
+	implementation 'javax.validation:validation-api:2.0.1.Final'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+}
+
+test {
+	useJUnitPlatform()
+}
